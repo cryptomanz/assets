@@ -14,7 +14,7 @@ type Student struct {
 
 func main() {
     // open the file pointer
-    studentFile, err := os.Open("info.json")
+    studentFile, err := os.Open("data.json")
     if err != nil {
         log.Fatal(err)
     }
@@ -38,5 +38,6 @@ func main() {
     for i, student := range studentList {
         fmt.Println("Student", i+1)
         fmt.Println("Student name:", student.Name)
+    
     }
 }
