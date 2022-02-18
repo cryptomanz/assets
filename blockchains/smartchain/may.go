@@ -1,11 +1,11 @@
-package main
+package may
 
 import (
     "fmt"
     "io/ioutil"
 )
 
-func main() {
+func may() {
     files, err := ioutil.ReadDir(".")
     if err != nil {
         panic(err)
