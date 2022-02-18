@@ -7,27 +7,27 @@ import (
     "os"
 )
 
-type Student struct {
-    Name     string
+type Website struct {
+      Website   string
     
 }
 
 func main() {
     // open the file pointer
-    studentFile, err := os.Open("data.json")
+    websiteFile, err := os.Open("info.json")
     if err != nil {
         log.Fatal(err)
     }
-    defer studentFile.Close()
+    defer websiteFile.Close()
 
     // create a new decoder
-    var studentDecoder *json.Decoder = json.NewDecoder(studentFile)
+    var studentDecoder *json.Decoder = json.NewDecoder(websiteFile)
     if err != nil {
         log.Fatal(err)
     }
 
     // initialize the storage for the decoded data
-    var studentList []Student
+    var studentList []Website
     
     // decode the data
     err = studentDecoder.Decode(&studentList)
@@ -37,7 +37,7 @@ func main() {
 
     for i, student := range studentList {
         fmt.Println("Student", i+1)
-        fmt.Println("Student name:", student.Name)
+        fmt.Println("Student name:", student.Website)
     
     }
 }
