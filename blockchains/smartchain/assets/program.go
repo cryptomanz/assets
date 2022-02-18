@@ -14,7 +14,7 @@ type Symbol struct {
 
 func main() {
     // open the file pointer
-    symbolFile, err := os.Open("tokenlist.json")
+    symbolFile, err := os.Open("info.json")
     if err != nil {
         log.Fatal(err)
     }
