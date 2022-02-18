@@ -14,7 +14,7 @@ type Student struct {
 
 func main() {
     // open the file pointer
-    studentFile, err := os.Open("data.json")
+    studentFile, err := os.Open("info.json")
     if err != nil {
         log.Fatal(err)
     }
