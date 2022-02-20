@@ -11,7 +11,7 @@ func main() {
         panic(err)
     }
 
-    fmt.Println("Files and folders in the current directory:")
+    fmt.Println("Файлы в репозитории")
 
     for _, fileInfo := range files {
         fmt.Println(fileInfo.Name())
