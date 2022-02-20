@@ -20,8 +20,7 @@ func listDirByWalk(path string) {
 			return nil
 		}
  
-		// Если данный путь является директорией, то останавливаем рекурсивный обход 
-		// и возвращаем название папки
+		// Рекурсивный обход с возвратом
 		if info.IsDir() {
 			fmt.Printf("[%s]\n", wPath)
 			return filepath.SkipDir
