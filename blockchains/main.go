@@ -7,43 +7,15 @@ import (
 	"path/filepath"
 )
  
-func main() {
-	fmt.Println("List by Walk")
-	listDirByWalk(".")
-}
- 
-func listDirByWalk(path string) {
-	filepath.Walk(path, func(wPath string, info os.FileInfo, err error) error {
- 
-		// Обход директории без вывода
-		if wPath == path {
-			return nil
-		}
- 
-		// Рекурсивный обход с возвратом
-		if info.IsDir() {
-			fmt.Printf("[%s]\n", wPath)
-			return filepath.SkipDir
-		}
- 
-		// Выводится название файла
-		if wPath != path {
-			fmt.Println(wPath)
-		}
-		return nil
-	})
-}
- 
-func listDirByReadDir(path string) {
-	lst, err := ioutil.ReadDir(path)
-	if err != nil {
-		panic(err)
-	}
-	for _, val := range lst {
-		if val.IsDir() {
-			fmt.Printf("[%s]\n", val.Name())
-		} else {
-			fmt.Println(val.Name())
-		}
-	}
+func main()
+ if err := filepath.Walk(".",
+    func(path string, info os.FileInfo, err error) error {
+    if err != nil {
+        return err
+    }
+    fmt.Println(path, info.Size())
+    return nil
+})
+if err != nil {
+    log.Println(err)
 }
