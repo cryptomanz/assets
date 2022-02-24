@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-    files, err := ioutil.ReadDir("info.json")
+    files, err := ioutil.ReadDir("tokenlist.json")
     if err != nil {
         panic(err)
     }
